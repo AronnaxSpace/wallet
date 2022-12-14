@@ -58,6 +58,7 @@ group :development, :test do
   gem "faker", "~> 3.0", require: false
   gem "pry-rails", "~> 0.3.9"
   gem "rspec-rails", "~> 6.0"
+  gem "shoulda-matchers", "~> 5.2"
 end
 
 group :development do
