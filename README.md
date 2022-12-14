@@ -1,24 +1,43 @@
-# README
+# Wallet
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Requirements
 
-Things you may want to cover:
+- Ruby 3.1.2
+- Bundler 2.3.26
+- PostgreSQL
+- Node.js
+- Yarn
 
-* Ruby version
+### Setup
 
-* System dependencies
+#### 1. Clone the repository
 
-* Configuration
+```bash
+git clone git@github.com:AronnaxSpace/wallet.git
+```
 
-* Database creation
+#### 2. Create .envrc file
 
-* Database initialization
+Install [direnv](https://direnv.net/) if not installed.
+Set the following variables:
 
-* How to run the test suite
+- DB_USERNAME
+- DB_PASSWORD
 
-* Services (job queues, cache servers, search engines, etc.)
+#### 3. Install dependecies
 
-* Deployment instructions
+```bash
+bundle && yarn
+```
 
-* ...
+#### 4. Setup the database
+
+```bash
+rails db:setup
+```
+
+#### 5. Start the application
+
+```bash
+foreman s -f Procfile.dev
+```
