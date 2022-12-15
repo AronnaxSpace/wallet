@@ -1,0 +1,5 @@
+<% flash.each do |flash_type, message| %>
+  <div id="toast-success" data-flash-target="flash" class="py-4 px-6 mb-4 text-white text-sm bg-<%= flash_background_color(flash_type) %>-400 rounded-lg shadow transition" role="alert">
+    <%= message %>
+  </div>
+<% end %>
