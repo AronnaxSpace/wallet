@@ -1,9 +1,12 @@
-<p style="color: green"><%= notice %></p>
+<h1 class="font-medium leading-tight text-5xl mt-0 mb-2">Accounts</h1>
 
-<h1>Accounts</h1>
-
-<div id="accounts">
-  <%= render @accounts %>
+<div class="mb-4">
+  <%= link_to "New account",
+              new_account_path,
+              class: "inline-block px-6 py-4 bg-blue-600 text-white font-medium text-sm leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out",
+              data: { turbo_frame: "modal_content", action: "modal#open" } %>
 </div>
 
-<%= link_to "New account", new_account_path %>
+<div id="accounts" class="space-y-4">
+  <%= render @accounts %>
+</div>

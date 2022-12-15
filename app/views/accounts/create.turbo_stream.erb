@@ -1,0 +1,3 @@
+<%= turbo_stream.replace "modal", partial: "layouts/modal" %>
+<%= turbo_stream.prepend "accounts", partial: "accounts/account", locals: { account: @account } %>
+<%= turbo_stream.prepend "flash", partial: "layouts/flash" %>

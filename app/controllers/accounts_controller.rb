@@ -1,6 +1,6 @@
 class AccountsController < ApplicationController
   def index
-    @accounts = current_user.accounts
+    @accounts = current_user.accounts.order(id: :desc)
   end
 
   def new
@@ -10,7 +10,14 @@ class AccountsController < ApplicationController
   def create
     @account = current_user.accounts.new(account_params)
 
-    @account.save
+    if @account.save
+      respond_to do |format|
+        format.html { redirect_to accounts_path, notice: 'Account was successfully created.' }
+        format.turbo_stream { flash.now[:notice] = 'Account was successfully created.' }
+      end
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def update

@@ -1,9 +1,3 @@
-<h1>New account</h1>
-
-<%= render "form", account: @account %>
-
-<br>
-
-<div>
-  <%= link_to "Back to accounts", accounts_path %>
-</div>
+<%= turbo_frame_tag :modal_content do %>
+  <%= render "form", account: @account %>
+<% end %>
