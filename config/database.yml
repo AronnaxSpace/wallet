@@ -20,8 +20,8 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: <%= ENV["DB_USERNAME"] %>
-  password: <%= ENV["DB_PASSWORD"] %>
+  username: <%= ENV["WALLET_DATABASE_USERNAME"] %>
+  password: <%= ENV["WALLET_DATABASE_PASSWORD"] %>
 
 development:
   <<: *default
@@ -85,4 +85,4 @@ production:
   <<: *default
   database: wallet_production
   username: wallet
-  password: <%= ENV["WALLET_DB_PASSWORD"] %>
+  password: <%= ENV["WALLET_DATABASE_PASSWORD"] %>
